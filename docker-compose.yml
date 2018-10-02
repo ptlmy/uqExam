@@ -7,7 +7,15 @@ services:
     ports:
      - 9042:9042
      - 7199:7199
-
+    volumes:
+      - "cassandra-data:/var/lib/cassandra"
+      - "cassandra-data:/home/cassandra/.cassandra"
+      - "./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
+      - "./init.sh:/init.sh"
+    
+    entrypoint:
+      - /bin/bash
+      - /init.sh
 ###############################
    cassandra1:
     image: cassandra
@@ -19,3 +27,11 @@ services:
     environment:
      - CASSANDRA_SEEDS=seed
 
+###############################
+   sparkmaster:
+    image: spark
+    container_name: spark_master
+    ports:
+      - 8080:8080
+volumes:
+  cassandra-data: {}
