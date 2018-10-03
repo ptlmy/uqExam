@@ -7,31 +7,60 @@ services:
     ports:
      - 9042:9042
      - 7199:7199
+     - 9160:9160
     volumes:
       - "cassandra-data:/var/lib/cassandra"
       - "cassandra-data:/home/cassandra/.cassandra"
       - "./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
       - "./init.sh:/init.sh"
+    tty: true
+    stdin_open: true
     
     entrypoint:
       - /bin/bash
       - /init.sh
 ###############################
-   cassandra1:
-    image: cassandra
-    container_name: cassandra1
-    ports:
-     - 9142:9042
-    links:
-     - cassandra0:seed
-    environment:
-     - CASSANDRA_SEEDS=seed
+#   cassandra1:
+#    image: cassandra
+#    container_name: cassandra1
+#    ports:
+#     - 9142:9042
+#    links:
+#     - cassandra0:seed
+#    environment:
+#     - CASSANDRA_SEEDS=seed
 
 ###############################
    sparkmaster:
     image: spark
-    container_name: spark_master
+    container_name: sparkmaster
+    hostname: sparkmaster
+    tty: true
+    stdin_open: true
     ports:
       - 8080:8080
+      - "7077:7077"
+
+      
+#   sparkworker:
+#    image: sparkworker
+#    container_name: sparkworker
+#    tty: true
+#    stdin_open: true
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - sparkmaster
+
+#   sparkworker2:
+#    image: sparkworker
+#    container_name: sparkworker2
+#    tty: true
+#    stdin_open: true
+#    ports:
+#      - "8082:8081"
+#    depends_on:
+#      - sparkmaster
+
 volumes:
   cassandra-data: {}

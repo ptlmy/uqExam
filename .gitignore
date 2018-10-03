@@ -1,1 +1,3 @@
 spark_docker/spark/
+spark_docker/sparkworker/spark
+spark_docker/sparkmaster/spark
