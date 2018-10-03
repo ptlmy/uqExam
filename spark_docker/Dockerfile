@@ -9,6 +9,6 @@ RUN export SPARK_HOME=/usr/local/spark
 
 RUN apt-get install -y openjdk-8-jdk
 RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-CMD ["/bin/bash", "/usr/local/spark/sbin/start-master.sh", "&& tail -f /dev/null"]
+CMD /usr/local/spark/sbin/start-master.sh && /bin/bash
 
 #RUN /usr/local/spark/sbin/start-slave.sh spark://ethane:7077
