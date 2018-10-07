@@ -32,10 +32,11 @@ services:
      - cassandra0:seed
     environment:
      - CASSANDRA_SEEDS=seed
-   
+
 #    ports:
-#      - "9043:9042" 
-#    
+#      - "9043:9042"
+#    volumes:
+#      - cassandra-data:/var/lib/cassandra
 #      - cassandra-data:/home/cassandra/.cassandra
 
 ######################
@@ -49,7 +50,7 @@ services:
       - 8080:8080
       - "7077:7077"
 
-      
+
    sparkworker:
     image: sparkworker
     container_name: sparkworker
@@ -68,6 +69,17 @@ services:
     ports:
       - "8082:8081"
     depends_on:
+      - sparkmaster
+
+   zepplin:
+    image: oonlyo/zeppelin:0.8
+    container_name: zeppelin
+    environment:
+      ZEPPELIN_PORT: 8090
+      MASTER: spark://sparkmaster:7077
+    ports:
+      - 80:8090
+    links:
       - sparkmaster
 
 volumes:
