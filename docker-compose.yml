@@ -69,16 +69,23 @@ services:
     depends_on:
       - sparkmaster
 
-   zepplin:
+   zeppelin:
     image: oonlyo/zeppelin:0.8
     container_name: zeppelin
-    environment:
-      ZEPPELIN_PORT: 8090
-      MASTER: spark://sparkmaster:7077
     ports:
-      - 80:8090
+      - 8090:8090
     links:
       - sparkmaster
+    environment:
+      ZEPPELIN_PORT: 8090
+
+   webapp:
+    image: webapp
+    container_name: webapp
+    ports:
+      - 80:8080
+    links:
+      - cassandra0:cassandra
 
 volumes:
   cassandra-data: {}
