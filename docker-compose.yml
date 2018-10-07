@@ -71,6 +71,16 @@ services:
     depends_on:
       - sparkmaster
 
+   sparkjobserver:
+    image: velvia/spark-jobserver:0.6.2.mesos-0.28.1.spark-1.6.1
+    container_name: jobserver
+    ports:
+      - "8091:8090"
+    links:
+      - sparkmaster
+    environment:
+      SPARK_MASTER: sparkmaster
+
    zeppelin:
     image: oonlyo/zeppelin:0.8
     container_name: zeppelin
