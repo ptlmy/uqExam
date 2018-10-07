@@ -97,8 +97,8 @@ services:
     ports:
       - 80:8080
     links:
-      - sparkmaster
-    
+      - cassandra0:cassandra
+
 
 volumes:
   cassandra-data: {}
