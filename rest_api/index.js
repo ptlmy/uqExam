@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   const query = 'SELECT * from users.login';
   client.execute(query)
     .then(result => {
-      const users = result.rows.map(row => row.id);
+      const users = result.rows.map(row => row.email);
       res.json(users);
     })
     .catch(err => {
