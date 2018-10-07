@@ -81,6 +81,7 @@ services:
       - 80:8090
     links:
       - sparkmaster
+    
 
 volumes:
   cassandra-data: {}
