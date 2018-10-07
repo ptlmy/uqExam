@@ -8,7 +8,9 @@ services:
     ports:
      - 9042:9042
      - 7199:7199
-
+    volumes:
+     - cassandra-data:/var/lib/cassandra
+     - ./init.cql:/init.cql
 ###############################
    cassandra1:
     image: cassandra
@@ -33,8 +35,7 @@ services:
    
 #    ports:
 #      - "9043:9042" 
-#    volumes:
-#      - cassandra-data:/var/lib/cassandra
+#    
 #      - cassandra-data:/home/cassandra/.cassandra
 
 ######################
