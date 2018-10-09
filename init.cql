@@ -1,10 +1,5 @@
 DROP KEYSPACE IF EXISTS exams;
-CREATE  KEYSPACE  exams 
-   WITH REPLICATION = { 
-      'class' : 'SimpleStrategy', 
-      'replication_factor' : 3 
-      };
-
+CREATE KEYSPACE exams WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': '3'} AND durable_writes = true;
 CREATE TABLE exams.coursecodes(
     examID TEXT,
     numberExams int,
@@ -118,3 +113,13 @@ INSERT INTO exams.comments (examID, examYear, questionID, username, commentStrin
 INSERT INTO exams.comments (examID, examYear, questionID, username, commentString, commentScore) VALUES ('ECON1010', 20181, 6, 'User123', 'I think this is the answer', 4);
 INSERT INTO exams.comments (examID, examYear, questionID, username, commentString, commentScore) VALUES ('ECON1010', 20181, 6, 'User123', 'I think this is the answer', 8);
 INSERT INTO exams.comments (examID, examYear, questionID, username, commentString, commentScore) VALUES ('ECON1010', 20181, 6, 'User123', 'I think this is the answer', 32);
+
+
+CREATE TABLE exams.spamdata(
+    key UUID,
+    spamKey TEXT,
+    spamText TEXT,
+    PRIMARY KEY(key, spamKey)
+    );
+
+
