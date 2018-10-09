@@ -49,6 +49,8 @@ services:
     ports:
       - 8080:8080
       - "7077:7077"
+    volumes: 
+      - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
 
 
    sparkworker:
@@ -81,23 +83,26 @@ services:
     environment:
       SPARK_MASTER: sparkmaster
 
-   zeppelin:
+   zepplin:
     image: oonlyo/zeppelin:0.8
     container_name: zeppelin
-    ports:
-      - 8090:8090
-    links:
-      - sparkmaster
     environment:
       ZEPPELIN_PORT: 8090
-
-   webapp:
-    image: webapp
-    container_name: webapp
+      MASTER: spark://sparkmaster:7077
     ports:
-      - 80:8080
+      - 80:8090
     links:
       - sparkmaster
+    volumes: 
+      - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
+
+   #webapp:
+    #image: webapp
+    #container_name: webapp
+    #ports:
+    #  - 80:8080
+    #links:
+    #  - sparkmaster
     
 
 volumes:
