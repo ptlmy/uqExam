@@ -1,0 +1,15 @@
+$SPARK_HOME/bin/spark-shell --conf spark.cassandra.connection.host=cassandra0 --packages com.datastax.spark:spark-cassandra-connector_2.11:2.3.2
+import com.datastax.spark.connector._
+import org.apache.spark.sql.cassandra._
+val rdd = sc.textFile("SMSSpamCollection.txt")
+println(rdd.count)
+
+
+##SCALA LOAD
+import com.datastax.spark.connector._
+import org.apache.spark.sql.cassandra._
+
+val rdd = sc.textFile("SMSSpamCollection.txt")
+val split = rdd.map(line => line.split("\t"))
+val finalRDD = split.map(arr => ("uuid()",arr (0),arr( 1 )))
+finalRDD.saveToCassandra("exams", "spamdata", SomeColumns("key","spamkey", "spamtext"))
