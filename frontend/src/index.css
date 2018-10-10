@@ -1,0 +1,88 @@
+body {
+  background-color: #f7f7f7;
+}
+
+html, body, .view, #root {
+  height: 100%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 220px;
+  background-color: #1b1c1d;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: grey;
+}
+
+.item {
+  padding: 0.9em 1.3em;
+  margin: 10px 0 10px 0;
+}
+.header {
+  color: white;
+  margin: 0 0 0.5em;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.exam-view {
+  display: flex;
+  height: 100%;
+}
+
+.page-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+.card {
+  min-height: 200px;
+  max-width: 800px;
+  width: 80%;
+  background-color: white;
+  margin: 20px 0 20px 0;
+  padding: 10px;
+  box-shadow: rgb(204, 204, 204) 0px 1px 2px;
+  overflow: auto;
+}
+
+.card h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.card h4 {
+  color: grey;
+}
+
+.search {
+  width: 300px;
+  height: 50px;
+  font-size: 13pt;
+  border-width: 0 0 2px;
+  border-color: lightgray;
+  text-align: center;
+  margin: 20px 0 20px 0;
+  background: none;
+}
+
+.search:focus {
+  border-color: grey;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
