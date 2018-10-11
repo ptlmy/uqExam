@@ -64,6 +64,21 @@ html, body, .view, #root {
   color: grey;
 }
 
+.comment-card {
+  min-height: 100px;
+  max-width: 400px;
+  width: 40%;
+  background-color: white;
+  margin: 20px 0 20px 0;
+  padding: 10px;
+  box-shadow: rgb(204, 204, 204) 0px 1px 2px;
+  overflow: auto;
+}
+
+.comment-card.spam {
+  background-color: lightcoral;
+}
+
 .search {
   width: 300px;
   height: 50px;

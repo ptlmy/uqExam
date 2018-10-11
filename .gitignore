@@ -1,3 +1,6 @@
 spark_docker/spark/
 spark_docker/sparkworker/spark
 spark_docker/sparkmaster/spark
+
+webapp/node_modules
+webapp/client/node_modules

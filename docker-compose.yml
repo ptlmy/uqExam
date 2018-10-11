@@ -49,7 +49,7 @@ services:
     ports:
       - 8080:8080
       - "7077:7077"
-    volumes: 
+    volumes:
       - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
 
 
@@ -90,20 +90,19 @@ services:
       ZEPPELIN_PORT: 8090
       MASTER: spark://sparkmaster:7077
     ports:
-      - 80:8090
+      - 8083:8090
     links:
       - sparkmaster
-    volumes: 
+    volumes:
       - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
 
-   #webapp:
-    #image: webapp
-    #container_name: webapp
-    #ports:
-    #  - 80:8080
-    #links:
-    #  - sparkmaster
-    
+   webapp:
+    image: webapp
+    container_name: webapp
+    ports:
+     - 80:9000
+    links:
+     - cassandra0:cassandra
 
 volumes:
   cassandra-data: {}
