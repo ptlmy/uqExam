@@ -2,6 +2,7 @@ version: '2'
 
 services:
 
+# Cassandra Cluster #
    cassandra0:
     image: cassandra
     container_name: cassandra0
@@ -10,8 +11,8 @@ services:
      - 7199:7199
     volumes:
      - cassandra-data:/var/lib/cassandra
-     - ./init.cql:/init.cql
-###############################
+     - ./cassandra/init.cql:/init.cql
+   
    cassandra1:
     image: cassandra
     container_name: cassandra1
@@ -22,24 +23,20 @@ services:
     environment:
      - CASSANDRA_SEEDS=seed
 
-###############################
-   cassandra2:
-    image: cassandra
-    container_name: cassandra2
-    ports:
-     - 9242:9042
-    links:
-     - cassandra0:seed
-    environment:
-     - CASSANDRA_SEEDS=seed
-
+################################## 
+# Commented out for memory purposes
+#   cassandra2:
+#    image: cassandra
+#    container_name: cassandra2
 #    ports:
-#      - "9043:9042"
-#    volumes:
-#      - cassandra-data:/var/lib/cassandra
-#      - cassandra-data:/home/cassandra/.cassandra
+#     - 9242:9042
+#    links:
+#     - cassandra0:seed
+#    environment:
+#     - CASSANDRA_SEEDS=seed
+###################################
 
-######################
+# Spark Cluster #
    sparkmaster:
     image: spark
     container_name: sparkmaster
@@ -50,7 +47,9 @@ services:
       - 8080:8080
       - "7077:7077"
     volumes: 
-      - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
+      - ./ml_data/SMSSpamCollection.txt:/SMSSpamCollection.txt
+      - ./spark_docker/spark_jars/WordCountTest.jar:/test.jar
+      - ./spark_docker/spark_jars/WordCountWorking.jar:/test1.jar
 
 
    sparkworker:
@@ -73,6 +72,7 @@ services:
     depends_on:
       - sparkmaster
 
+# Spark Jobserver # 
    sparkjobserver:
     image: velvia/spark-jobserver:0.6.2.mesos-0.28.1.spark-1.6.1
     container_name: jobserver
@@ -80,9 +80,16 @@ services:
       - "8091:8090"
     links:
       - sparkmaster
+    depends_on:
+      - sparkmaster
     environment:
-      SPARK_MASTER: sparkmaster
+      SPARK_MASTER: spark://sparkmaster:7077
+    volumes: 
+      - ./ml_data/SMSSpamCollection.txt:/SMSSpamCollection.txt
+      - ./spark_docker/spark_jars/WordCountTest.jar:/test.jar
+      - ./spark_docker/spark_jars/WordCountWorking.jar:/test1.jar
 
+# Zeppelin #
    zepplin:
     image: oonlyo/zeppelin:0.8
     container_name: zeppelin
@@ -94,16 +101,12 @@ services:
     links:
       - sparkmaster
     volumes: 
-      - ./SMSSpamCollection.txt:/SMSSpamCollection.txt
+      - ./ml_data/SMSSpamCollection.txt:/SMSSpamCollection.txt
 
-   #webapp:
-    #image: webapp
-    #container_name: webapp
-    #ports:
-    #  - 80:8080
-    #links:
-    #  - sparkmaster
-    
+
 
 volumes:
   cassandra-data: {}
+
+
+

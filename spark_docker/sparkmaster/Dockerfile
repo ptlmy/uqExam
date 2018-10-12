@@ -8,7 +8,7 @@ RUN mv spark /usr/local/
 #RUN ln -s /usr/local/spark-2.2.0-bin-hadoop2.7 /usr/local/spark
 RUN cd /usr/local/spark
 ENV SPARK_HOME=/usr/local/spark/spark-2.2.0-bin-hadoop2.7
-
+RUN apt-get install python && apt-get install python-pip
 RUN $SPARK_HOME/bin/spark-shell --packages com.datastax.spark:spark-cassandra-connector_2.11:2.3.2
 CMD $SPARK_HOME/sbin/start-master.sh && /bin/bash
 

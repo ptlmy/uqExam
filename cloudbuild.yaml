@@ -1,4 +1,0 @@
-#cloudbuild.yaml
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['run', 'testcass',"-d", "cassandra:3.11"]
