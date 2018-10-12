@@ -103,6 +103,14 @@ services:
     volumes: 
       - ./ml_data/SMSSpamCollection.txt:/SMSSpamCollection.txt
 
+   webapp:
+    image: webapp
+    container_name: webapp
+    ports:
+     - 80:9000
+    links:
+     - cassandra0:cassandra
+
 
 
 volumes:

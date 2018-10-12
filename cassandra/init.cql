@@ -77,46 +77,46 @@ CREATE TABLE exams.comments(commentID UUID, examID TEXT,examYear int, questionID
 --# DATA INSERT FOR COMMENTS
 
 --#ECON1010
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'UserAlex', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'User123', 'No This is', 1, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'UserNick', 'I think this is the answer', 2, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'User123', 'I think this is the answer', 1, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'User123', 'I think this is the answer', 2, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 1, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 15, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 1, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 52, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'No This is', 15, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'SpamBot', 'Beep Boop', 1, 1);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'UserAlex', 'I think this is the answer', 52, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 1, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'UserNick', 'I think this is the answer', 4, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 2, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 2, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 5, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'No This is', 2, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'SpamBot', 'Beep Boop', 4, 1);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'UserNick', 'I think this is the answer', 5, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'SpamBot', 'Beep Boop', 4, 1);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 4, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 1, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'User123', 'I think this is the answer', 41, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 3, 'UserAlex', 'I think this is the answer', 41, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 4, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 5, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'UserNick', 'No This is', 4, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 6, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 7, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'UserNick', 'I think this is the answer', 7, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 4, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'SpamBot', 'Beep Boop', 4, 1);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'UserAlex', 'I think this is the answer', 6, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 6, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'UserAlex', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'No This is', 4, 1);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 3, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 5, 'UserNick', 'I think this is the answer', 4, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 1, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'SpamBot', 'Beep Boop', 4,1);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'UserAlex', 'I think this is the answer', 7, 0);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 7, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 4, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 4, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'SpamBot', 'Beep Boop', 4, 1);
 INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 8, 0);
-INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'User123', 'I think this is the answer', 32, 0);
+INSERT INTO exams.comments (commentID, examID, examYear, questionID, username, commentString, commentScore, isSpam) VALUES (uuid(), 'ECON1010', 20181, 6, 'UserAlex', 'I think this is the answer', 32, 0);
 
 
 CREATE TABLE exams.spamdata(
