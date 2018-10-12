@@ -2,3 +2,5 @@ spark_docker/spark/
 spark_docker/sparkworker/spark
 spark_docker/sparkmaster/spark
 jobserver/spark-jobserver
+spark_docker/sparkmaster/wordcount/project
+spark_docker/sparkmaster/wordcount/target
